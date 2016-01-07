@@ -33,7 +33,7 @@ public class ServiceAplicationProxy {
         return stringResponse;
     }
     
-    public static String delete(String ak, String sk, String requestUrl, String postbody, 
+    public static String delete(String ak, String sk, String requestUrl, 
             String serviceName, String region){
         String stringResponse = "";
         Map<String, Object> responseMap = RestMethod.delete(ak, sk, requestUrl, serviceName, region);
