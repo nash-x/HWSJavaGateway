@@ -50,8 +50,9 @@ public class RestMethod {
             URL url = new URL(requestUrl);
             HttpMethodName httpMethod = HttpMethodName.PUT;
             InputStream content = new ByteArrayInputStream(putBody.getBytes());
-            
-            response = accessService.access(url, content, (long) putBody.getBytes().length, httpMethod);
+            Map<String, String> header = new HashMap<String, String>();
+            header.put("Content-Type", "application/json;charset=UTF-8");
+            response = accessService.access(url, header, content, (long) putBody.getBytes().length, httpMethod);
             
             resultMap = RestMethod.convertResponseToMap(response);
             
@@ -146,9 +147,11 @@ public class RestMethod {
         InputStream content = new ByteArrayInputStream(postbody.getBytes());
         HttpMethodName httpMethod = HttpMethodName.POST;
         HttpResponse response;
-        
+                
+        Map<String, String> header = new HashMap<String, String>();
+        header.put("Content-Type", "application/json;charset=UTF-8");
         try {
-            response = accessService.access(url, content, (long) postbody.getBytes().length, httpMethod);
+            response = accessService.access(url, header, content, (long) postbody.getBytes().length, httpMethod);
             resultMap = RestMethod.convertResponseToMap(response);
         } catch (Exception e) {
             logger.error(e);
