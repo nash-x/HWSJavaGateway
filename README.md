@@ -46,3 +46,8 @@ We can use REST method in Python to call HWClouds java SDK after running hws_gat
 	@staticmethod
 	def delete(ak, sk, requestUrl, service_name, region):
     	return HWSRestMethod.rest_method_java.delete(ak, sk, requestUrl, service_name, region)
+
+
+## Latest Release ##
+Please refer to release page:
+[HWS-GATEWAY Releases](https://github.com/nash-x/HWSJavaGateway/releases "HWS-GATEWAY Releases")
