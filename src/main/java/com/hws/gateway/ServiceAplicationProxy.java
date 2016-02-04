@@ -45,4 +45,28 @@ public class ServiceAplicationProxy {
         return stringResponse;
     }
     
+    public static String put(String ak, String sk, String requestUrl, String putbody, 
+            String serviceName, String region){
+        String stringResponse = "";
+        Map<String, Object> responseMap = RestMethod.put(ak, sk, requestUrl, putbody, serviceName, region);
+        stringResponse = GWUtil.mapToString(responseMap);
+        
+        logger.debug("Response of rest method PUT is: " + stringResponse);
+        
+        
+        return stringResponse;
+    }
+    
+    public static String patch(String ak, String sk, String requestUrl, String patchBody,
+            String serviceName, String region){
+        String stringResponse = "";
+        Map<String, Object> responseMap = RestMethod.patch(ak, sk, requestUrl, patchBody, serviceName, region);
+        stringResponse = GWUtil.mapToString(responseMap);
+        
+        logger.debug("Response of rest method PATCH is: " + stringResponse);
+        
+        
+        return stringResponse;
+    }
+    
 }
