@@ -8,8 +8,7 @@ http://support.hwclouds.com/api-ecs/zh-cn_topic_0020805992.html
 hws_gateway_v0.1.jar is an executable jar file for tag: hws_v0.1.
 
 It can execute by following command:
-
-# java -jar hws_gateway_v0.1.jar
+java -jar hws_gateway_v0.1.jar
 
 We can use REST method in Python to call HWClouds java SDK after running hws_gateway_v0.1.jar like this:
 
